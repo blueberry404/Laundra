@@ -6,7 +6,9 @@ import Category from '../components/category';
 class CategoryContainer extends React.Component {
     
     render() {
-        <Category />
+        return (
+            <Category style={{flex:1}}/>
+        );
     }
 }
 

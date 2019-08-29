@@ -2,67 +2,27 @@ import React, {Fragment} from 'react';
 import { Provider } from 'react-redux';
 import {
   SafeAreaView,
-  StyleSheet,
-  StatusBar,
+  View,
+  StatusBar
 } from 'react-native';
 
 import store from './store';
 import Router from './routes';
 import { colorStatusBar } from './constants/colors';
+import * as NavigatorService from './helpers/NavigatorService';
 
 const App = () => {
   return (
     <Provider store={store}>
-        <View style={{ flex: 1 }}>
-          <StatusBar backgroundColor={colorStatusBar} barStyle="dark-content" />
-          <SafeAreaView>
-          <Router
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar backgroundColor={colorStatusBar} barStyle="dark-content" />
+        <Router
           ref={(navRef) => {
             NavigatorService.setContainer(navRef);
-        }} />
-        </SafeAreaView>
-        </View>
-      </Provider>
+          }} />
+      </SafeAreaView>
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;

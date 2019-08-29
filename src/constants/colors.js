@@ -1,6 +1,11 @@
 export const colorGrayText = '#959494';
 export const colorBlueText = '#1a85de';
-export const colorNavBar = '#1DAAF1';
-export const colorStatusBar = '#1281DD';
+export const colorNavBar = '#9C27B0';
+export const colorStatusBar = '#7B1FA2';
 export const colorNavTint = '#fff';
 export const colorPlaceholder = '#454545';
+export const colorAccent = '#E040FB';
+export const colorLightPrimary = '#E1BEE7';
+export const colorDivider = '#BDBDBD';
+export const colorPrimaryText = '#212121';
+export const colorSecondaryText = '#757575';
