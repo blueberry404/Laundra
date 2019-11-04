@@ -1,18 +1,25 @@
+import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { Image } from 'react-native';
+import { Icon } from 'native-base';
 
-import { colorNavTint, colorAccent, colorNavBar, colorStatusBar } from '../constants/colors';
+import { colorNavTint, colorAccent, colorStatusBar, colorBlack, colorWhite } from '../constants/colors';
 import CategoryContainer from '../containers/CategoryContainer';
+import Images from '../../images/image';
 
 export const tabNavigator = createMaterialTopTabNavigator({
-    Tops: { screen: CategoryContainer },
+    Dress: { 
+      screen: CategoryContainer,
+      navigationOptions: {
+        tabBarIcon: ({ focused, tintColor }) => <Icon source={Images.iconShirts} color={tintColor} />,
+      }
+     },
     Bedding: { screen: CategoryContainer },
-    Suits: { screen: CategoryContainer },
-    Trousers: { screen: CategoryContainer },
-    Accessories: { screen: CategoryContainer },
+    Accessories: { screen: CategoryContainer }
   }, 
   {
-    initialRouteName: 'Tops',
+    initialRouteName: 'Dress',
     tabBarPosition: 'top',
     swipeEnabled: true,
     animationEnabled: true,
@@ -42,7 +49,7 @@ export const tabNavigator = createMaterialTopTabNavigator({
           backgroundColor: colorNavTint,
         },
         headerTintColor: '#FFFFFF',
-        title: 'TabExample',
+        title: 'Laundra',
       },
     },
   });
